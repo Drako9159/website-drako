@@ -6,6 +6,7 @@ import morgan from "morgan";
 import cors from "cors";
 import postsRoute from "./routes/posts.routes.js";
 import loginRoute from "./routes/login.routes.js";
+import authMiddleware from "./middlewares/session.js";
 
 //dotenv.config();
 const app = express();
@@ -16,8 +17,38 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
 
+// cors configuration+
+app.use(
+  cors({
+    origin: [
+      process.env.DOMINIO,
+      "http://localhost:3000",
+      "http://" + process.env.IP + ":3000",
+    ],
+    exposedHeaders: ["authorization"],
+    credentials: true,
+  })
+);
+
 // static files
-app.use(express.static(path.join(process.cwd(), "./public/posts/images/")));
+app.use(
+  authMiddleware,
+  express.static(path.join(process.cwd(), "./public/posts/"))
+);
+
+// add control cache
+let setCache = function (req, res, next) {
+  const period = 60 * 5;
+  const cacheTime = 60 * 60 * 24; // 1 day
+  if (req.method == "GET") {
+    res.set("Cache-control", `public, max-age=${cacheTime}`);
+  } else {
+    res.set("Cache-control", `no-store`);
+  }
+  next();
+};
+
+app.use(setCache);
 
 // routes
 app.use("/api", postsRoute);
