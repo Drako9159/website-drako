@@ -15,15 +15,14 @@ const app = express();
 app.set("port", process.env.PORT || 3000);
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(cors());
 
 // cors configuration+
 app.use(
   cors({
     origin: [
       process.env.DOMINIO,
-      "http://localhost:3000",
-      "http://" + process.env.IP + ":3000",
+      "http://localhost:5000",
+      "http://" + process.env.IP + ":5000",
     ],
     exposedHeaders: ["authorization"],
     credentials: true,
@@ -32,8 +31,9 @@ app.use(
 
 // static files
 app.use(
+  "/api/images",
   authMiddleware,
-  express.static(path.join(process.cwd(), "./public/posts/"))
+  express.static(path.join(process.cwd(), "./public/posts/images"))
 );
 
 // add control cache

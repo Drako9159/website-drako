@@ -23,5 +23,6 @@ export async function getContentPost(req, res) {
   if (!id) return handleError(res, "ERROR_GET_POST", 400);
   const content = await readerContentPost(id);
   if (!content) return handleError(res, "POST_NOT_EXIST", 400);
-  res.header("Content-Type", "text/html; charset=utf-8").send(content);
+  //res.header("Content-Type", "text/html; charset=utf-8").send(content);
+  res.send({ content });
 }
