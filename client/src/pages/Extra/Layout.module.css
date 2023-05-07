@@ -1,0 +1,31 @@
+
+@font-face {
+  font-family: "Montse";
+  font-weight: 400;
+  src: url("./fonts/Montserrat-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Tumbly";
+  font-weight: 600;
+  src: url("./fonts/TumblyA2.otf");
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transition: background-color 0.5s ease;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #8c8d94;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #424247;
+}

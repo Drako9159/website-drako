@@ -1,0 +1,21 @@
+.container {
+  font-family: "Montse";
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+.container h2 {
+  margin: 20px;
+}
+
+.button {
+  text-decoration: none;
+  border: solid 2px;
+  padding: 20px;
+  border-radius: 50px;
+  margin-top: 20px;
+}
