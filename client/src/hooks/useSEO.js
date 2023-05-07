@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useThemeStore } from "../store/theme";
 
 export default function useSEO({ description, title, link }) {
   const prevTitle = useRef(document.title);
@@ -21,6 +22,9 @@ export default function useSEO({ description, title, link }) {
     document
       .querySelector('meta[name="twitter:description"]')
       .getAttribute("content")
+  );
+  const prevThemeColor = useRef(
+    document.querySelector('meta[name="theme-color"]').getAttribute("content")
   );
 
   useEffect(() => {
@@ -89,4 +93,17 @@ export default function useSEO({ description, title, link }) {
     return () =>
       twitterDescription.setAttribute("content", previousTwitterDescription);
   }, [description]);
+
+  const theme = useThemeStore((state) => state.theme);
+  useEffect(() => {
+    const previousThemeColor = prevThemeColor.current;
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+
+    if (theme === "night") {
+      themeColor.setAttribute("content", "#1f2028");
+    } else {
+      themeColor.setAttribute("content", "#ffffff");
+    }
+    return () => themeColor.setAttribute("content", previousThemeColor);
+  }, [theme]);
 }

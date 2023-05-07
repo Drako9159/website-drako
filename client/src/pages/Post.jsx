@@ -1,17 +1,26 @@
 import Card2 from "../components/Post/Card2";
 import Card1 from "../components/Post/Card1";
 
-import Header from "./Extra/Header/Header"
+import Header from "./Extra/Header/Header";
 import Footer from "./Extra/Footer/Footer";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getPost } from "../api/posts";
 import NotRequest from "../pages/Extra/NotRequest";
+import useSEO from "../hooks/useSEO";
 
 export default function Post() {
   const routeParams = useParams();
   const [post, setPost] = useState([]);
   const [status, setStatus] = useState(0);
+
+  /*
+  useSEO({
+    description: post === [] ? "description" : post.content.info.description,
+    title: post === [] ? "title" : post.content.info.title,
+    link: post === [] ? "link" : import.meta.env.DOMAIN + post.content.info.filename,
+  })*/
+  
 
   useEffect(() => {
     async function apply() {
@@ -20,7 +29,6 @@ export default function Post() {
           setPost(response.data), setStatus(response.status);
         });
       } catch (error) {
-        //console.log(error.response.status);
         setStatus(error.request.status);
       }
     }

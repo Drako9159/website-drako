@@ -6,38 +6,41 @@ import { useState, useEffect } from "react";
 import { getPostsEn, getPostsEs } from "../api/posts";
 import { useLanguageStore } from "../store/language";
 import NotRequest from "../pages/Extra/NotRequest";
-import languageLibrary from "../languages/languageLibrary";
 import useSEO from "../hooks/useSEO";
 import useLanguage from "../hooks/useLanguage";
+import { useAuthStore } from "../store/auth";
 
 export default function Blog() {
+  useSEO(useLanguage().head.blog);
   const language = useLanguageStore((state) => state.language);
   const [posts, setPosts] = useState([]);
   const [status, setStatus] = useState(0);
-  useSEO(useLanguage().head.blog);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const strings = languageLibrary(language);
+  const isAuth = useAuthStore((state) => state.isAuth);
 
   useEffect(() => {
     async function getPosts() {
       try {
-        if (language === "es") {
+        if (language === "es" && isAuth) {
           await getPostsEs().then((response) => {
-            setPosts(response.data.content), setStatus(response.status);
+            setPosts(response.data.content),
+              setStatus(response.status),
+              setIsLoading(false);
           });
-        } else if (language === "en") {
+        } else if (language === "en" && isAuth) {
           await getPostsEn().then((response) => {
-            setPosts(response.data.content), setStatus(response.status);
+            setPosts(response.data.content),
+              setStatus(response.status),
+              setIsLoading(false);
           });
         }
       } catch (error) {
         setStatus(error.request.status);
       }
     }
-    setTimeout(() => {
-      getPosts();
-    }, 1500);
-  }, []);
+    getPosts();
+  }, [isAuth]);
 
   return status >= 400 ? (
     <>
@@ -50,7 +53,7 @@ export default function Blog() {
     <>
       <Header activeLink={"blog"}></Header>
       <Card1></Card1>
-      <Card2 posts={posts} status={status}></Card2>
+      <Card2 posts={posts} status={status} isLoading={isLoading}></Card2>
       <Footer></Footer>
     </>
   );

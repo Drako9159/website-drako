@@ -12,12 +12,15 @@ export default function Card1({ post, status }) {
   if (status >= 400) {
     return <NotRequest status={status} />;
   }
+
+
+
   return (
     <div
       className={`${styles.container} ${
         theme === "night" ? styles.containerNight : styles.containerDay
       }`}
-      dangerouslySetInnerHTML={{ __html: post.content }}
+      dangerouslySetInnerHTML={{ __html: post.content.dataHTML }}
     ></div>
   );
 }

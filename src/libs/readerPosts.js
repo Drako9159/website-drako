@@ -45,7 +45,7 @@ function readHeader(fileText) {
 }
 
 export async function readerContentPost(id) {
-  if(!id.match(/^[0-9]+$/)) return await readByFilepath(id);
+  if (!id.match(/^[0-9]+$/)) return await readByFilepath(id);
   return await readById(id);
 }
 
@@ -60,11 +60,17 @@ async function readById(id) {
   const content = await readFile(
     path.join(`public/posts/md_files/` + filename)
   );
+  const text = await readFile(
+    path.join(`public/posts/md_files`, filename),
+    "utf-8"
+  );
+  const info = readHeader(text);
+
   try {
     const dataHTML = md.render(
       content.toString().replace(/-{3}([à-ü\w\s:"',{}/.-])*-{3}/gm, "")
     );
-    return dataHTML;
+    return { dataHTML, info };
   } catch (err) {
     console.log(err);
     return "NOT_POST";
@@ -82,11 +88,16 @@ async function readByFilepath(filepath) {
   const content = await readFile(
     path.join(`public/posts/md_files/` + filename)
   );
+  const text = await readFile(
+    path.join(`public/posts/md_files`, filename),
+    "utf-8"
+  );
+  const info = readHeader(text);
   try {
     const dataHTML = md.render(
       content.toString().replace(/-{3}([à-ü\w\s:"',{}/.-])*-{3}/gm, "")
     );
-    return dataHTML;
+    return { dataHTML, info };
   } catch (err) {
     console.log(err);
     return "NOT_POST";

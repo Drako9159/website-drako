@@ -2,13 +2,13 @@
 @font-face {
   font-family: "Montse";
   font-weight: 400;
-  src: url("./fonts/Montserrat-Regular.woff2") format("woff2");
+  src: url("../../assets/fonts/Montserrat-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Tumbly";
   font-weight: 600;
-  src: url("./fonts/TumblyA2.otf");
+  src: url("../../assets/fonts/TumblyA2.otf");
 }
 
 .container {

@@ -13,26 +13,31 @@ import { useAuthStore } from "./store/auth";
 import { useThemeStore } from "./store/theme";
 import { useLanguageStore } from "./store/language";
 import { handleLocalStorage } from "./utils/handleLocalStorage";
+import useAuth from "./hooks/useAuth";
 
 export default function App() {
   const setTheme = useThemeStore((state) => state.setTheme);
   const setLanguageMode = useLanguageStore((state) => state.setLanguage);
-  const setToken = useAuthStore((state) => state.setToken);
-  
-  handleLocalStorage(localStorage, setTheme, setLanguageMode);
+  //const setToken = useAuthStore((state) => state.setToken);
 
+  handleLocalStorage(localStorage, setTheme, setLanguageMode);
+/*
   useEffect(() => {
     async function loginApi() {
       try {
         await loginRequest().then((response) =>
-          setToken({ token: response.headers.authorization })
+          useAuthStore
+            .getState()
+            .setToken({ token: response.headers.authorization })
         );
       } catch (error) {
         console.log(error);
       }
     }
     loginApi();
-  });
+  }, []);*/
+
+  useAuth();
 
   return (
     <Layout>

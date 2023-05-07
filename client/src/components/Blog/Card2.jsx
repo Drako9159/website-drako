@@ -5,9 +5,11 @@ import { useThemeStore } from "../../store/theme";
 import themeLibrary from "../../themes/themeLibrary";
 import NotRequest from "../../pages/Extra/NotRequest";
 
-export default function Card2({ posts, status }) {
+export default function Card2({ posts, status, isLoading }) {
   const theme = useThemeStore((state) => state.theme);
   const color = themeLibrary(theme);
+
+  if (isLoading) return <ChargeAnimation></ChargeAnimation>;
 
   if (status === 0) {
     return <ChargeAnimation></ChargeAnimation>;
