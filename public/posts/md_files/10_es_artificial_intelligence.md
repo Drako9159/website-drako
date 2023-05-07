@@ -2,7 +2,7 @@
 id:10
 category:education
 tag:artificial-intelligence
-filename:10_es_artificial_intelligence
+filename:es_artificial_intelligence
 language:es
 color:orange
 title:Sobre la inteligecia artificial

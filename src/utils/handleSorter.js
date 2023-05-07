@@ -11,6 +11,7 @@ export function addElementDate(data) {
   return data;
 }
 
+
 export function filterByLanguage(language, data) {
   const availableLanguages = ["es", "en"];
   if (!availableLanguages.includes(language)) return data;

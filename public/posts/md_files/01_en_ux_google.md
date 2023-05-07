@@ -2,7 +2,7 @@
 id:01
 category:education
 tag:javascript
-filename:01_en_ux_google.md
+filename:en_ux_google
 language:en
 color:orange
 title:Google UX Case Study

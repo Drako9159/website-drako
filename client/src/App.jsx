@@ -13,19 +13,15 @@ import { useAuthStore } from "./store/auth";
 import { useThemeStore } from "./store/theme";
 import { useLanguageStore } from "./store/language";
 import { handleLocalStorage } from "./utils/handleLocalStorage";
-import languageLibrary from "./languages/languageLibrary";
 
 export default function App() {
   const setTheme = useThemeStore((state) => state.setTheme);
   const setLanguageMode = useLanguageStore((state) => state.setLanguage);
   const setToken = useAuthStore((state) => state.setToken);
-  const language = useLanguageStore((state) => state.language);
-  const strings = languageLibrary(language);
   
   handleLocalStorage(localStorage, setTheme, setLanguageMode);
 
   useEffect(() => {
-    //document.title = strings.titlesTab.home;
     async function loginApi() {
       try {
         await loginRequest().then((response) =>

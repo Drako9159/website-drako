@@ -2,7 +2,7 @@
 id:03
 category:education
 tag:javascript
-filename:03_es_investigationux_google
+filename:es_investigationux_google
 language:es
 color:purple
 title:Investigación UX Google

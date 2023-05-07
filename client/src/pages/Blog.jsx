@@ -7,16 +7,18 @@ import { getPostsEn, getPostsEs } from "../api/posts";
 import { useLanguageStore } from "../store/language";
 import NotRequest from "../pages/Extra/NotRequest";
 import languageLibrary from "../languages/languageLibrary";
+import useSEO from "../hooks/useSEO";
+import useLanguage from "../hooks/useLanguage";
 
 export default function Blog() {
   const language = useLanguageStore((state) => state.language);
   const [posts, setPosts] = useState([]);
   const [status, setStatus] = useState(0);
+  useSEO(useLanguage().head.blog);
 
   const strings = languageLibrary(language);
 
   useEffect(() => {
-    document.title = strings.titlesTab.blog;
     async function getPosts() {
       try {
         if (language === "es") {

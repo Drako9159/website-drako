@@ -6,6 +6,22 @@ export default function useSEO({ description, title, link }) {
     document.querySelector('meta[name="description"]').getAttribute("content")
   );
   const prevLink = useRef(document.querySelector('link[rel="canonical"]'));
+  const prevOgTitle = useRef(
+    document.querySelector('meta[property="og:title"]').getAttribute("content")
+  );
+  const prevOgDescription = useRef(
+    document
+      .querySelector('meta[property="og:description"]')
+      .getAttribute("content")
+  );
+  const prevTwitterTitle = useRef(
+    document.querySelector('meta[name="twitter:title"]').getAttribute("content")
+  );
+  const prevTwitterDescription = useRef(
+    document
+      .querySelector('meta[name="twitter:description"]')
+      .getAttribute("content")
+  );
 
   useEffect(() => {
     const previousTitle = prevTitle.current;
@@ -32,4 +48,45 @@ export default function useSEO({ description, title, link }) {
     }
     return () => linkCanonical.setAttribute("href", previousLink);
   }, [link]);
+
+  useEffect(() => {
+    const previousOgTitle = prevOgTitle.current;
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (title) {
+      ogTitle.setAttribute("content", `${title}`);
+    }
+    return () => ogTitle.setAttribute("content", previousOgTitle);
+  }, [title]);
+
+  useEffect(() => {
+    const previousOgDescription = prevOgDescription.current;
+    const ogDescription = document.querySelector(
+      'meta[property="og:description"]'
+    );
+    if (description) {
+      ogDescription.setAttribute("content", `${description}`);
+    }
+    return () => ogDescription.setAttribute("content", previousOgDescription);
+  }, [description]);
+
+  useEffect(() => {
+    const previousTwitterTitle = prevTwitterTitle.current;
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (title) {
+      twitterTitle.setAttribute("content", `${title}`);
+    }
+    return () => twitterTitle.setAttribute("content", previousTwitterTitle);
+  }, [title]);
+
+  useEffect(() => {
+    const previousTwitterDescription = prevTwitterDescription.current;
+    const twitterDescription = document.querySelector(
+      'meta[name="twitter:description"]'
+    );
+    if (description) {
+      twitterDescription.setAttribute("content", `${description}`);
+    }
+    return () =>
+      twitterDescription.setAttribute("content", previousTwitterDescription);
+  }, [description]);
 }

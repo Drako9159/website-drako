@@ -21,7 +21,7 @@ export default function Card2({ posts, status }) {
     <div className={styles.container}>
       {posts.map((e) => {
         return (
-          <Link key={e.id} className={styles.Link} to={`/blog/${e.id}`}>
+          <Link key={e.id} className={styles.Link} to={`/blog/${e.filename}`}>
             <div className={styles.card}>
               <div className={styles.head}>
                 <img

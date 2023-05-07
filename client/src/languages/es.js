@@ -35,9 +35,22 @@ export const es = {
   posts: {
     text1: "Volver atrás",
   },
-  titlesTab: {
-    home: "Antonio.jar",
-    blog: "Blog - Antonio.jar",
-    about: "Acerca de Antonio.jar",
+  head: {
+    home: {
+      description:
+        "Ven a echar un vistazo a Antonio.jar conoce su carrera como ingeniero de software.",
+      title: "Antonio.jar",
+      link: "https://drako.icu",
+    },
+    about: {
+      description: "Conoce más sobre Antonio.jar",
+      title: "About Antonio.jar",
+      link: "https://drako.icu/about",
+    },
+    blog: {
+      description: "Ven a leer mi blog y conoce más sobre Antonio.jar.",
+      title: "The Antonio.jar Blog",
+      link: "https://drako.icu/blog",
+    },
   },
 };

@@ -48,7 +48,7 @@ let setCache = function (req, res, next) {
   next();
 };
 
-app.use(setCache);
+//app.use(setCache);
 
 // routes
 app.use("/api", postsRoute);

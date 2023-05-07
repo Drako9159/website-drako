@@ -2,7 +2,7 @@
 id:06
 category:educacion
 tag:javascript
-filename:06_es_bootcamp_oracle
+filename:es_bootcamp_oracle
 language:es
 color:yellow
 title:Bootcamp Oracle Next Education

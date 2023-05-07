@@ -45,10 +45,38 @@ function readHeader(fileText) {
 }
 
 export async function readerContentPost(id) {
+  if(!id.match(/^[0-9]+$/)) return await readByFilepath(id);
+  return await readById(id);
+}
+
+async function readById(id) {
   const md_files = await readdir(path.join(`public/posts/md_files`));
   let filename = "";
+
   md_files.forEach((e) => {
     e.split("_")[0].includes(id) ? (filename = e) : null;
+  });
+  if (filename === "") return false;
+  const content = await readFile(
+    path.join(`public/posts/md_files/` + filename)
+  );
+  try {
+    const dataHTML = md.render(
+      content.toString().replace(/-{3}([à-ü\w\s:"',{}/.-])*-{3}/gm, "")
+    );
+    return dataHTML;
+  } catch (err) {
+    console.log(err);
+    return "NOT_POST";
+  }
+}
+
+async function readByFilepath(filepath) {
+  const md_files = await readdir(path.join(`public/posts/md_files`));
+  let filename = "";
+
+  md_files.forEach((e) => {
+    e.includes(filepath) ? (filename = e) : null;
   });
   if (filename === "") return false;
   const content = await readFile(

@@ -2,7 +2,7 @@
 id:07
 category:education
 tag:javascript
-filename:07_en_challenge_oracle
+filename:en_challenge_oracle
 language:en
 color:green
 title:First Alura Challenge
