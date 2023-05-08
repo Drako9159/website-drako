@@ -31,9 +31,13 @@ export default function Post() {
               setPostHead({
                 description: response.data.content.info.description,
                 title: response.data.content.info.title,
-                link: `https://drako.icu/blog/${response.data.content.info.filename}`,
+                link:
+                  import.meta.env.VITE_URL_DOMAIN +
+                  "blog/" +
+                  response.data.content.info.filename,
                 image:
-                  import.meta.env.VITE_URL_BACKEND + "images/webp/"+
+                  import.meta.env.VITE_URL_BACKEND +
+                  "images/webp/" +
                   response.data.content.info.image,
               }),
               setIsLoading(false);

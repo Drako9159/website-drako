@@ -40,17 +40,17 @@ export const es = {
       description:
         "Ven a echar un vistazo a Antonio.jar conoce su carrera como ingeniero de software.",
       title: "Antonio.jar",
-      link: "https://drako.icu",
+      link: import.meta.env.VITE_URL_DOMAIN,
     },
     about: {
       description: "Conoce más sobre Antonio.jar",
       title: "About Antonio.jar",
-      link: "https://drako.icu/about",
+      link: import.meta.env.VITE_URL_DOMAIN + "about",
     },
     blog: {
       description: "Ven a leer mi blog y conoce más sobre Antonio.jar.",
       title: "El Blog de Antonio.jar",
-      link: "https://drako.icu/blog",
+      link: import.meta.env.VITE_URL_DOMAIN + "blog",
     },
   },
 };

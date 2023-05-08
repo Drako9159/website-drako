@@ -31,17 +31,17 @@ export const en = {
       description:
         "Come take a look at Antonio.jar Take a look at his career as a software engineer.",
       title: "Antonio.jar",
-      link: "https://drako.icu",
+      link: import.meta.env.VITE_URL_DOMAIN,
     },
     about: {
       description: "Get to know Antonio.jar",
       title: "About Antonio.jar",
-      link: "https://drako.icu/about",
+      link: import.meta.env.VITE_URL_DOMAIN + "about",
     },
     blog: {
       description: "Come read my blog and learn more about me.",
       title: "The Antonio.jar Blog",
-      link: "https://drako.icu/blog",
+      link: import.meta.env.VITE_URL_DOMAIN + "blog",
     },
   },
 };
