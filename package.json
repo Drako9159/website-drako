@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "test",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "build-client": "cd client && npm run build"
   },
   "author": "@drako9159",
   "license": "MIT",
