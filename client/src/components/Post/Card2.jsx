@@ -2,8 +2,6 @@ import styles from "./Card2.module.css";
 import ChargeAnimation from "../../pages/Extra/ChargeAnimation";
 import { useThemeStore } from "../../store/theme";
 import NotRequest from "../../pages/Extra/NotRequest";
-import useSEO from "../../hooks/useSEO";
-import { useEffect } from "react";
 
 export default function Card1({ post, status, isLoading }) {
   const theme = useThemeStore((state) => state.theme);

@@ -18,24 +18,8 @@ import useAuth from "./hooks/useAuth";
 export default function App() {
   const setTheme = useThemeStore((state) => state.setTheme);
   const setLanguageMode = useLanguageStore((state) => state.setLanguage);
-  //const setToken = useAuthStore((state) => state.setToken);
 
   handleLocalStorage(localStorage, setTheme, setLanguageMode);
-/*
-  useEffect(() => {
-    async function loginApi() {
-      try {
-        await loginRequest().then((response) =>
-          useAuthStore
-            .getState()
-            .setToken({ token: response.headers.authorization })
-        );
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    loginApi();
-  }, []);*/
 
   useAuth();
 

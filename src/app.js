@@ -32,7 +32,7 @@ app.use(
 // static files
 app.use(
   "/api/images",
-  authMiddleware,
+  //authMiddleware,
   express.static(path.join(process.cwd(), "./public/posts/images"))
 );
 
@@ -66,9 +66,7 @@ app.use((req, res, next) => {
 });*/
 
 app.use("*", (req, res, next) => {
-  //res.status(404).send({ message: "NOT FOUND" });
   const indexFile = path.resolve(process.cwd() + "/client/dist/", "index.html");
-  console.log(indexFile)
   res.sendFile(indexFile);
 });
 
