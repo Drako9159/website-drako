@@ -6,7 +6,7 @@ filename:es_bootcamp_oracle
 language:es
 color:yellow
 title:Bootcamp Oracle Next Education
-image:/post01.webp
+image:post01.webp
 description:Sobre el challenge de Alura
 createdAt:27-12-2022
 readTime:5 min lectura

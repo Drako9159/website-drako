@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useThemeStore } from "../store/theme";
 
-export default function useSEO({ description, title, link }) {
+export default function useSEO({ description, title, link, image }) {
   const prevTitle = useRef(document.title);
   const prevDescription = useRef(
     document.querySelector('meta[name="description"]').getAttribute("content")
@@ -25,6 +25,16 @@ export default function useSEO({ description, title, link }) {
   );
   const prevThemeColor = useRef(
     document.querySelector('meta[name="theme-color"]').getAttribute("content")
+  );
+
+  const prevTwitterImage = useRef(
+    document.querySelector('meta[name="twitter:image"]').getAttribute("content")
+  );
+  const prevOgImage = useRef(
+    document.querySelector('meta[property="og:image"]').getAttribute("content")
+  );
+  const prevContentImage = useRef(
+    document.querySelector('meta[name="image"]').getAttribute("content")
   );
 
   useEffect(() => {
@@ -106,4 +116,31 @@ export default function useSEO({ description, title, link }) {
     }
     return () => themeColor.setAttribute("content", previousThemeColor);
   }, [theme]);
+
+  useEffect(() => {
+    const previousTwitterImage = prevTwitterImage.current;
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (image) {
+      twitterImage.setAttribute("content", `${image}`);
+    }
+    return () => twitterImage.setAttribute("content", previousTwitterImage);
+  }, [image]);
+
+  useEffect(() => {
+    const previousOgImage = prevOgImage.current;
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (image) {
+      ogImage.setAttribute("content", `${image}`);
+    }
+    return () => ogImage.setAttribute("content", previousOgImage);
+  }, [image]);
+
+  useEffect(() => {
+    const previousContentImage = prevContentImage.current;
+    const contentImage = document.querySelector('meta[name="image"]');
+    if (image) {
+      contentImage.setAttribute("content", `${image}`);
+    }
+    return () => contentImage.setAttribute("content", previousContentImage);
+  }, [image]);
 }

@@ -36,6 +36,8 @@ app.use(
   express.static(path.join(process.cwd(), "./public/posts/images"))
 );
 
+app.use(express.static(path.join(process.cwd(), "./client/dist")));
+
 // add control cache
 let setCache = function (req, res, next) {
   const period = 60 * 5;
@@ -55,11 +57,19 @@ app.use("/api", postsRoute);
 app.use("/api", loginRoute);
 
 // classic error 404
+/*
 app.use((req, res, next) => {
   res
     .status(404)
     .header("Content-Type", "application/json; charset=utf-8")
     .send({ message: "404 Not Found" });
+});*/
+
+app.use("*", (req, res, next) => {
+  //res.status(404).send({ message: "NOT FOUND" });
+  const indexFile = path.resolve(process.cwd() + "/client/dist/", "index.html");
+  console.log(indexFile)
+  res.sendFile(indexFile);
 });
 
 export default app;

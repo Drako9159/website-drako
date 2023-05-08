@@ -6,7 +6,7 @@ filename:en_investigationux_google
 language:en
 color:purple
 title:Google UX Research
-image:/post04.webp
+image:post04.webp
 description:About Google UX
 createdAt:14-01-2023
 readTime:5 min read

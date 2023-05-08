@@ -6,7 +6,7 @@ filename:en_ux_google
 language:en
 color:orange
 title:Google UX Case Study
-image:/post03.webp
+image:post03.webp
 description:About Google UX
 createdAt:14-01-2023
 readTime:15 min read
@@ -19,7 +19,7 @@ author:Antonio Jaramillo Jaramillo
 
 ## What is Google UX?
 
-One of Google's initiatives to boost the skills of developers and people interested in application design is the UX program, which seeks that developers can develop applications that are easy to use and meet the needs of users, for it has developed a 6-month course in which they are taught to create applications that meet the standards of UX, the course is called [User Experience (UX) Design](hhttps://www.coursera.org/professional-certificates/google-ux-design) and can be taken free of charge through your organization or individually.
+One of Google's initiatives to boost the skills of developers and people interested in application design is the UX program, which seeks that developers can develop applications that are easy to use and meet the needs of users, for it has developed a 6-month course in which they are taught to create applications that meet the standards of UX, the course is called [User Experience (UX) Design](https://www.coursera.org/professional-certificates/google-ux-design) and can be taken free of charge through your organization or individually.
 
 ### Professional Certificate
 

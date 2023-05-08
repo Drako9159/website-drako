@@ -8,34 +8,43 @@ import { useState, useEffect } from "react";
 import { getPost } from "../api/posts";
 import NotRequest from "../pages/Extra/NotRequest";
 import useSEO from "../hooks/useSEO";
+import { useAuthStore } from "../store/auth";
 
 export default function Post() {
   const routeParams = useParams();
   const [post, setPost] = useState([]);
   const [status, setStatus] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [postHead, setPostHead] = useState({});
 
-  /*
-  useSEO({
-    description: post === [] ? "description" : post.content.info.description,
-    title: post === [] ? "title" : post.content.info.title,
-    link: post === [] ? "link" : import.meta.env.DOMAIN + post.content.info.filename,
-  })*/
-  
+  const isAuth = useAuthStore((state) => state.isAuth);
+
+  useSEO(postHead);
 
   useEffect(() => {
     async function apply() {
       try {
-        await getPost(routeParams.id).then((response) => {
-          setPost(response.data), setStatus(response.status);
-        });
+        if (isAuth) {
+          await getPost(routeParams.id).then((response) => {
+            setPost(response.data),
+              setStatus(response.status),
+              setPostHead({
+                description: response.data.content.info.description,
+                title: response.data.content.info.title,
+                link: `https://drako.icu/blog/${response.data.content.info.filename}`,
+                image:
+                  import.meta.env.VITE_URL_BACKEND + "images/webp/"+
+                  response.data.content.info.image,
+              }),
+              setIsLoading(false);
+          });
+        }
       } catch (error) {
         setStatus(error.request.status);
       }
     }
-    setTimeout(() => {
-      apply();
-    }, 1500);
-  }, []);
+    apply();
+  }, [isAuth]);
 
   return status >= 400 ? (
     <>
@@ -48,7 +57,7 @@ export default function Post() {
     <>
       <Header activeLink={"blog"}></Header>
       <Card1></Card1>
-      <Card2 post={post} status={status}></Card2>
+      <Card2 post={post} status={status} isLoading={isLoading}></Card2>
       <Footer></Footer>
     </>
   );

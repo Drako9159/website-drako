@@ -27,7 +27,7 @@ export default function Card2({ posts, status, isLoading }) {
             <div className={styles.card}>
               <div className={styles.head}>
                 <img
-                  src={`https://backendblog.fly.dev/api/v2/images/articles${e.image}`}
+                  src={`https://backendblog.fly.dev/api/v2/images/articles/${e.image}`}
                   alt={e.title}
                   className={styles.pick}
                   style={{ outlineColor: `${e.color}` }}

@@ -6,7 +6,7 @@ filename:es_converter_oracle
 language:es
 color:pink
 title:Convertidor Challenge
-image:/post05.webp
+image:post05.webp
 description:About chanllenge by ALura
 createdAt:03-03-2023
 readTime:15 min lectura

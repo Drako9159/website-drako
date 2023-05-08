@@ -6,7 +6,7 @@ filename:es_artificial_intelligence
 language:es
 color:orange
 title:Sobre la inteligecia artificial
-image:/post06.webp
+image:post06.webp
 description:About artificial intelligence
 createdAt:12-04-2023
 readTime:25 min lectura

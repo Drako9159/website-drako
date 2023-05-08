@@ -49,7 +49,7 @@ export const es = {
     },
     blog: {
       description: "Ven a leer mi blog y conoce más sobre Antonio.jar.",
-      title: "The Antonio.jar Blog",
+      title: "El Blog de Antonio.jar",
       link: "https://drako.icu/blog",
     },
   },

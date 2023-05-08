@@ -6,7 +6,7 @@ filename:es_investigationux_google
 language:es
 color:purple
 title:Investigación UX Google
-image:/post04.webp
+image:post04.webp
 description:Acerca de Google UX
 createdAt:14-01-2023
 readTime:5 min lectura

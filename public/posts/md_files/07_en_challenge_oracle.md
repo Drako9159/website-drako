@@ -6,7 +6,7 @@ filename:en_challenge_oracle
 language:en
 color:green
 title:First Alura Challenge
-image:/post02.webp
+image:post02.webp
 description:Sobre el challenge de Alura
 createdAt:27-12-2022
 readTime:15 min read
