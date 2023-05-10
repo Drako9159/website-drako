@@ -4,9 +4,11 @@ import ChargeAnimation from "../../pages/Extra/ChargeAnimation";
 import { useThemeStore } from "../../store/theme";
 import themeLibrary from "../../themes/themeLibrary";
 import NotRequest from "../../pages/Extra/NotRequest";
+import { useConfigsStore } from "../../store/configs";
 
 export default function Card2({ posts, status, isLoading }) {
-  const theme = useThemeStore((state) => state.theme);
+  //const theme = useThemeStore((state) => state.theme);
+  const theme = useConfigsStore((state) => state.configs.theme);
   const color = themeLibrary(theme);
 
   if (isLoading) return <ChargeAnimation></ChargeAnimation>;

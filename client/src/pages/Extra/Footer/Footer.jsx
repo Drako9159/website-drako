@@ -8,19 +8,28 @@ import { useThemeStore } from "../../../store/theme";
 import { useLanguageStore } from "../../../store/language";
 import languageLibrary from "../../../languages/languageLibrary";
 import themeLibrary from "../../../themes/themeLibrary";
+import { useConfigsStore } from "../../../store/configs";
 
 export default function Footer() {
-  const language = useLanguageStore((state) => state.language);
+  const language = useConfigsStore((state) => state.configs.language);
   const strings = languageLibrary(language);
   const checkRute = useParams();
   const navigate = useNavigate();
-  const theme = useThemeStore((state) => state.theme);
+  //const theme = useThemeStore((state) => state.theme);
+  const theme = useConfigsStore((state) => state.configs.theme);
   const color = themeLibrary(theme);
-  const setLanguage = useLanguageStore((state) => state.setLanguage);
 
   function handleLanguage(value) {
-    localStorage.setItem("languageMode", `${value}`);
-    setLanguage({ language: value });
+
+    useConfigsStore.getState().setLanguage({ language: value });
+      
+      localStorage.setItem(
+        "configs",
+        JSON.stringify(useConfigsStore.getState().configs)
+      );
+
+    //localStorage.setItem("languageMode", `${value}`);
+    //setLanguage({ language: value });
     navigate("/");
     //window.location.reload(false);
   }

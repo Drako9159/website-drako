@@ -5,10 +5,12 @@ import languageLibrary from "../../languages/languageLibrary";
 import { useThemeStore } from "../../store/theme";
 import { useLanguageStore } from "../../store/language";
 import themeLibrary from "../../themes/themeLibrary";
+import { useConfigsStore } from "../../store/configs";
 
 export default function Card1() {
-  const language = useLanguageStore((state) => state.language);
-  const theme = useThemeStore((state) => state.theme);
+  const language = useConfigsStore((state) => state.configs.language);
+  //const theme = useThemeStore((state) => state.theme);
+  const theme = useConfigsStore((state) => state.configs.theme);
   const color = themeLibrary(theme);
   const strings = languageLibrary(language);
 

@@ -24,7 +24,6 @@ app.use(
       process.env.VERCEL_URL,
       "http://localhost:5000",
       "http://" + process.env.IP + ":5000",
-      "http://" + process.env.IP + ":4000",
     ],
     exposedHeaders: ["authorization"],
     credentials: true,

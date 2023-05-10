@@ -7,19 +7,28 @@ import { useLanguageStore } from "../../../store/language";
 import { useThemeStore } from "../../../store/theme";
 import themeLibrary from "../../../themes/themeLibrary";
 import languageLibrary from "../../../languages/languageLibrary";
+import { useConfigsStore } from "../../../store/configs";
 
 export default function Header({ activeLink }) {
-  const language = useLanguageStore((state) => state.language);
+  const language = useConfigsStore((state) => state.configs.language);
   const [btn, setBtn] = useState(styles.notActive);
   const [isActiveButton, setActiveButton] = useState(styles.burguerNotActive);
   const [animationDay, setAnimationDay] = useState("");
   const [animationNight, setAnimationNight] = useState("");
 
-  const theme = useThemeStore((state) => state.theme);
-  const strings = languageLibrary(language);
-  const setTheme = useThemeStore((state) => state.setTheme);
+  
+  //const theme = useConfigsStore((state) => state.configs.theme);
+  const configs = useConfigsStore((state) => state.configs);
+  const setTheme = useConfigsStore((state) => state.setTheme);
+  const theme = useConfigsStore((state) => state.configs.theme);
+  //const theme = useThemeStore((state) => state.theme);
 
-  const color = themeLibrary(theme);
+  const strings = languageLibrary(language);
+  //const setTheme = useThemeStore((state) => state.setTheme);
+  //const setConfigs = useConfigsStore((state) => state.setConfigs);
+  const color = themeLibrary(useConfigsStore.getState().configs.theme);
+
+
 
   function handleClickBurguer(e) {
     if (isActiveButton === styles.burguerNotActive) {
@@ -34,12 +43,30 @@ export default function Header({ activeLink }) {
   function handleTheme() {
     setAnimationDay(styles.pickDayAnimationOn);
     setAnimationNight(styles.pickNightAnimationOn);
-    if (theme === "night") {
+    if (useConfigsStore.getState().configs.theme === "night") {
       setTheme({ theme: "day" });
-      localStorage.setItem("themeMode", "day");
+      //setConfigs({ configs: { theme: "day", language: language }});
+     
+     // useConfigsStore.getState().setTheme({ theme: "day" });
+
+      localStorage.setItem(
+        "configs",
+        JSON.stringify(useConfigsStore.getState().configs)
+      );
+
+    
+
     } else {
       setTheme({ theme: "night" });
-      localStorage.setItem("themeMode", "night");
+      
+      //useConfigsStore.getState().setTheme({ theme: "night" });
+      
+      
+      localStorage.setItem(
+        "configs",
+        JSON.stringify(useConfigsStore.getState().configs)
+      );
+
     }
   }
 

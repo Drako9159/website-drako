@@ -2,9 +2,11 @@ import themeLibrary from "../../themes/themeLibrary";
 import { useThemeStore } from "../../store/theme";
 import styles from "./NotRequest.module.css";
 import { useNavigate } from "react-router-dom";
+import { useConfigsStore } from "../../store/configs";
 
 export default function NotRequest({ status }) {
-  const theme = useThemeStore((state) => state.theme);
+  //const theme = useThemeStore((state) => state.theme);
+  const theme = useConfigsStore((state) => state.configs.theme);
   const color = themeLibrary(theme);
 
   const navigate = useNavigate();

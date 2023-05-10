@@ -8,18 +8,27 @@ import Post from "./pages/Post";
 import Blog from "./pages/Blog";
 import Wrapper from "./pages/Extra/Wrapper";
 import NotFound from "./pages/Extra/NotFound";
-import { loginRequest } from "./api/auth";
-import { useAuthStore } from "./store/auth";
 import { useThemeStore } from "./store/theme";
 import { useLanguageStore } from "./store/language";
 import { handleLocalStorage } from "./utils/handleLocalStorage";
+import useConfigs from "./hooks/useConfigs";
 import useAuth from "./hooks/useAuth";
+import { useConfigsStore } from "./store/configs";
 
 export default function App() {
   const setTheme = useThemeStore((state) => state.setTheme);
   const setLanguageMode = useLanguageStore((state) => state.setLanguage);
 
-  handleLocalStorage(localStorage, setTheme, setLanguageMode);
+  //handleLocalStorage(localStorage, setTheme, setLanguageMode);
+
+  useConfigs();
+ 
+
+  //const setConfigTheme = useConfigsStore((state) => state.setTheme);
+  //setConfigTheme({ theme: "daysss" });
+  //const setThemeConfig 
+  //useConfigsStore.getState().setTheme({ theme: "day" })
+  //console.log(useConfigsStore.getState().configs);
 
   useAuth();
 
