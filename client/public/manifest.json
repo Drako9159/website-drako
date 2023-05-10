@@ -19,7 +19,7 @@
     }
   ],
   "id": "/?source=pwa",
-  "start_url": "https://drako.icu",
+  "start_url": "https://www.drako.icu",
   "background_color": "#1f2028",
   "display": "standalone",
   "scope": "/",
