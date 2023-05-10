@@ -3,17 +3,17 @@
   "name": "Anton's Blog",
   "icons": [
     {
-      "src": "./icons/logo.png",
+      "src": "./icons/logoMoon.png",
       "type": "image/png",
       "sizes": "512x512"
     },
     {
-      "src": "./icons/logo.png",
+      "src": "./icons/logoMoon.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "./icons/logo.png",
+      "src": "./icons/logoMoon.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -43,13 +43,13 @@
   "description": "Weather forecast information",
   "screenshots": [
     {
-      "src": "/images/screenshot1.png",
+      "src": "./icons/logoMoon.png",
       "type": "image/png",
       "sizes": "540x720",
       "form_factor": "narrow"
     },
     {
-      "src": "/images/screenshot2.jpg",
+      "src": "./icons/logoMoon.png",
       "type": "image/jpg",
       "sizes": "720x540",
       "form_factor": "wide"
