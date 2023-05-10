@@ -44,7 +44,7 @@ export const es = {
     },
     about: {
       description: "Conoce más sobre Antonio.jar",
-      title: "About Antonio.jar",
+      title: "Acerca de Antonio.jar",
       link: import.meta.env.VITE_URL_DOMAIN + "about",
     },
     blog: {
