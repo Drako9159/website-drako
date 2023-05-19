@@ -5,6 +5,7 @@ import Card2 from "../components/Blog/Card2";
 import { useState, useEffect } from "react";
 import { getPostsEn, getPostsEs } from "../api/posts";
 import { useLanguageStore } from "../store/language";
+import { useConfigsStore } from "../store/configs";
 import NotRequest from "../pages/Extra/NotRequest";
 import useSEO from "../hooks/useSEO";
 import useLanguage from "../hooks/useLanguage";
@@ -12,7 +13,8 @@ import { useAuthStore } from "../store/auth";
 
 export default function Blog() {
   useSEO(useLanguage().head.blog);
-  const language = useLanguageStore((state) => state.language);
+  
+  const language = useConfigsStore((state) => state.configs.language);
   const [posts, setPosts] = useState([]);
   const [imagesUrl, setImagesUrl] = useState(""); // [0] = [url, setUrl
   const [status, setStatus] = useState(0);
