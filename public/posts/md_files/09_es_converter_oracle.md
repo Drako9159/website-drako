@@ -4,16 +4,18 @@ category:education
 tag:java
 filename:es_converter_oracle
 language:es
-color:pink
+color:red
 title:Convertidor Challenge
 image:post05.webp
-description:About chanllenge by ALura
+description:Sobre el challenge de Oracle Next Education Convertidor de moneda
 createdAt:03-03-2023
 readTime:15 min lectura
 author:Antonio Jaramillo Jaramillo
 ---
 # Convertidor Challenge
-![logo oracle + alura](https://backendblog.fly.dev/api/v2/images/articles/post05.webp)
+Mar 03, 2023 — 15 min de lectura
+
+![logo oracle + alura](https://website-drako.fly.dev/api/images/webp/post05.webp)
 
 Uno de los retos en del bootcamp de Alura es crear un convertidor de moneda, esto para aquellos quienes optaron por la ruta de aprendizaje backend, en este post se explica como se realizó el convertidor.
 
@@ -29,7 +31,7 @@ El convertidor fue realizado en java, utilizando la librería Swing para la inte
 
 ### ¿Cómo funciona?
 
-![image-gif](https://backendblog.fly.dev/api/v2/images/articles/post05-01.gif)
+![image-gif](https://website-drako.fly.dev/api/images/gif/post05-01.gif)
 
 ### ¿Cómo se realizó?
 
@@ -37,27 +39,27 @@ El convertidor fue realizado en java, utilizando la librería Swing para la inte
 
 Aplicar un look & feel a la aplicación es muy sencillo, solo se debe añadir la librería al proyecto y añadir el siguiente código en el método main:
 
-![image-complete](https://backendblog.fly.dev/api/v2/images/articles/post05-02.webp)
+![image-complete](https://website-drako.fly.dev/api/images/webp/post05-02.webp)
 
 La clase Primary es la que crea el frame principal de la aplicación, en ella se añaden los componentes de la interfaz gráfica, como los panels, los campos de texto, el menu, y los actions o listeners:
 
-![image-complete](https://backendblog.fly.dev/api/v2/images/articles/post05-03.webp)
+![image-complete](https://website-drako.fly.dev/api/images/webp/post05-03.webp)
 
 El menu funciona como una navegación entre los 3 diferentes paneles que tiene la aplicación, cada panel se activa y desactiva con el método setVisible, el cual recibe un booleano, true para activar y false para desactivar:
 
-![image-complete](https://backendblog.fly.dev/api/v2/images/articles/post05-04.webp)
+![image-complete](https://website-drako.fly.dev/api/images/webp/post05-04.webp)
 
 Se crearon 3 clases para cada panel, estas clases heredan de JPanel, y se añaden al frame principal únicamente para llevar los mensajes de error, la clase para la conversión de moneda queda de la siguiente manera:
 
-![image-gif](https://backendblog.fly.dev/api/v2/images/articles/post05-05.gif)
+![image-gif](https://website-drako.fly.dev/api/images/gif/post05-05.gif)
 
 Después la clase para la conversión de temperatura queda de la siguiente manera:
 
-![image-gif](https://backendblog.fly.dev/api/v2/images/articles/post05-06.gif)
+![image-gif](https://website-drako.fly.dev/api/images/gif/post05-06.gif)
 
 El manejo de las validaciones se realiza con una clase Toast, esto para dar información al usuario sobre el estado de la aplicación, si se realizó la conversión o si hubo algún error, la clase recibe dos parametros, el mensaje que tiene que mostrar y el color del mensaje, el color se puede elegir entre 2 opciones, rojo y verde. Adicionalmente el mensaje debe desaparecer en 4 segundos, esto se realiza con un timer:
 
-![image-gif](https://backendblog.fly.dev/api/v2/images/articles/post05-07.gif)
+![image-gif](https://website-drako.fly.dev/api/images/gif/post05-07.gif)
 
 ### Opinión personal
 

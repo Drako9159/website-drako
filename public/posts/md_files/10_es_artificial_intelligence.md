@@ -7,13 +7,15 @@ language:es
 color:orange
 title:Sobre la inteligecia artificial
 image:post06.webp
-description:About artificial intelligence
+description:Acerca de los tipos de inteligencia artificial
 createdAt:12-04-2023
 readTime:25 min lectura
 author:Antonio Jaramillo Jaramillo
 ---
 # Sobre la inteligecia artificial
-![inteligencia artificial image](https://backendblog.fly.dev/api/v2/images/articles/post06.webp)
+Abr 12, 2023 — 25 min de lectura
+
+![inteligencia artificial image](https://website-drako.fly.dev/api/images/webp/post06.webp)
 
 La Inteligencia Artificial en las ciencias de la computación, se presenta como un conjunto de sistemas o combinación de algoritmos que tienen como propósito la creación de tecnologías que imitan la inteligencia humana, el desarrollo de la inteligencia artificial permite la realización de aquellas tareas que requieren de cierta inteligencia humana. Se abordarán los dos tipos de IA, IA Débil e IA Fuerte o General, con la intención de identificar sus características, diferencias, ventajas y desventajas, alcances y explorar la importancia de implementar la ética en el desarrollo de la IA, reconocer sus riesgos y principales consideraciones éticas al desarrollar una Inteligencia Artificial.
 
@@ -36,7 +38,7 @@ Es complicado determinar las ventajas de una IA Fuerte y más aún las desventaj
 
 La desventaja que presentan ambas Inteligencias es la afectación que se genera en el mercado laboral, este tipo de sistemas llegan a reemplazar muchos de los empleos actuales y otros ya no existen gracias a su implementación. Se cree que el 30% de los empleos que hoy existen, serán reemplazados por IA en el futuro. 
 
-![img-only-intermediate](https://backendblog.fly.dev/api/v2/images/articles/post06-01.webp)
+![img-only-intermediate](https://website-drako.fly.dev/api/images/webp/post06-01.webp)
 
 ## Importancia de la ética en el desarrollo de la IA
 

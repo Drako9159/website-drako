@@ -14,8 +14,9 @@ author:Antonio Jaramillo Jaramillo
 ---
 
 # Google UX Case Study
+Jan 14th, 2023 — 15 min read
 
-![logo ux](https://backendblog.fly.dev/api/v2/images/articles/post03.webp)
+![logo ux](https://website-drako.fly.dev/api/images/webp/post03.webp)
 
 ## What is Google UX?
 
@@ -46,7 +47,7 @@ One of the advantages of this course is that practical projects are done, this l
 7. Design a user experience of a public interest initiative and prepare the work.
 
 
-![img-only-intermediate](https://backendblog.fly.dev/api/v2/images/articles/post03-01.webp)
+![img-only-intermediate](https://website-drako.fly.dev/api/images/webp/post03-01.webp)
 
 ### Personal opinion
 

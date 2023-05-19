@@ -16,8 +16,10 @@ export default function Post() {
   const [status, setStatus] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
   const [postHead, setPostHead] = useState({});
+  const [colorPost, setColorPost] = useState("blue");
 
   const isAuth = useAuthStore((state) => state.isAuth);
+
 
   useSEO(postHead);
 
@@ -28,6 +30,7 @@ export default function Post() {
           await getPost(routeParams.id).then((response) => {
             setPost(response.data),
               setStatus(response.status),
+              setColorPost(response.data.content.post.color),
               setPostHead({
                 description: response.data.content.post.description,
                 title: response.data.content.post.title,
@@ -61,7 +64,7 @@ export default function Post() {
     <>
       <Header activeLink={"blog"}></Header>
       <Card1></Card1>
-      <Card2 post={post} status={status} isLoading={isLoading}></Card2>
+      <Card2 post={post} status={status} isLoading={isLoading} colorPost={colorPost}></Card2>
       <Footer></Footer>
     </>
   );

@@ -7,13 +7,15 @@ language:es
 color:green
 title:Primer Challenge de Alura
 image:post02.webp
-description:About chanllenge by ALura
-createdAt:27-12-2022
+description:Sobre el challenge de Alura Ecryptor de texto
+createdAt:25-12-2022
 readTime:15 min lectura
 author:Antonio Jaramillo Jaramillo
 ---
 # Primer Challenge de Alura
-![logo oracle + alura](https://backendblog.fly.dev/api/v2/images/articles/post02.webp)
+Dic 25, 2022 — 15 min de lectura
+
+![logo oracle + alura](https://website-drako.fly.dev/api/images/webp/post02.webp)
 
 En diciembre del 2022 comenzó la segunda edición el bootcamp de [Alura](https://app.aluracursos.com), que es ofrecido en conjunto con la empresa [Oracle](www.oracle.com), este curso pretende formar desarolladores utilizando herramientas de desarrollo web y permite que los participantes decidan su nivel de formación así como la posibilidad de elegir el área en la que pretenden desempeñarse, Backend o Frontend.
 

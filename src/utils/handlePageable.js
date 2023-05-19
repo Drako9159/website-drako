@@ -1,6 +1,6 @@
 // default size is 10
 export function pageable(data, page, size, sort) {
-  const limit = size ? +size : 10;
+  const limit = size ? +size : 20;
   const offset = page ? page * limit : 0;
 
   let content = data.slice(offset, offset + limit);

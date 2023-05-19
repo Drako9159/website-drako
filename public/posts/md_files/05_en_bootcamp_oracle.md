@@ -7,14 +7,16 @@ language:en
 color:yellow
 title:Bootcamp Oracle Next Education
 image:post01.webp
-description:About challenge of Alura
+description:About challenge of Oracle Next Education
 createdAt:27-12-2022
 readTime:15 min read
 author:Antonio Jaramillo Jaramillo
 ---
 
 # Bootcamp Oracle Next Education
-![logo oracle + alura](https://backendblog.fly.dev/api/v2/images/articles/post01.webp)
+Dec 27th, 2022 — 15 min read
+
+![logo oracle + alura](https://website-drako.fly.dev/api/images/webp/post01.webp)
 
 ## What is Oracle Next Education?
 It is presented as one of Oracle's initiatives that seeks to train developers, for which it has partnered with Alura to offer a training course in which participants can choose between two areas of development, Backend or Frontend.

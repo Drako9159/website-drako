@@ -31,8 +31,9 @@ function readHeader(fileText) {
   }
   const parse = data[0].trim();
   const dataFilter = parse.split("\n").filter(Boolean);
+  const withoutR = dataFilter.map((e) => e.replace(/\r/g, ""));
   const abs = {};
-  dataFilter.forEach((line) => {
+  withoutR.forEach((line) => {
     const [key, value, more] = line.split(":");
     if (more) {
       abs[key] = value + ":" + more;

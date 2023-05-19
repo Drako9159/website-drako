@@ -14,8 +14,9 @@ author:Antonio Jaramillo Jaramillo
 ---
 
 # Google UX Research
+Jan 14th, 2022 — 5 min read
 
-![logo ux](https://backendblog.fly.dev/api/v2/images/articles/post04.webp)
+![logo ux](https://website-drako.fly.dev/api/images/webp/post04.webp)
 
 After reviewing the basics of user experience design and understanding the design process from ideation, comes the user experience research process. In this process we seek to understand the context of the users, their needs and problems, for this we conduct interviews, surveys and observations.
 
@@ -58,7 +59,7 @@ Interviews are one of the most used techniques in UX research, the interviews ar
 Observations determine users' behaviors, recording what they do, what they say and what they think. Our ability to interpret these aspects may be limited; it is necessary to contrast the data obtained from observations with those obtained from interviews. During this process, it is important to identify some biases that could affect our research process.
 
 
-![img-only-intermediate](https://backendblog.fly.dev/api/v2/images/articles/post04-01.webp)
+![img-only-intermediate](https://website-drako.fly.dev/api/images/webp/post04-01.webp)
 
 ### Research results
 

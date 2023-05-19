@@ -16,10 +16,10 @@ export function filterByLanguage(language, data) {
   const availableLanguages = ["es", "en"];
   if (!availableLanguages.includes(language)) return data;
   if (language === "es") {
-    data = data.filter((e) => e.language === "es\r");
+    data = data.filter((e) => e.language === "es");
   }
   if (language === "en") {
-    data = data.filter((e) => e.language === "en\r");
+    data = data.filter((e) => e.language === "en");
   }
   return data;
 }
