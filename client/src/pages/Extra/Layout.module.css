@@ -3,7 +3,7 @@
   font-family: "Montse";
   font-weight: 400;
   /*src: url("../../assets/fonts/Montserrat-Regular.woff2") format("woff2");*/
-  src: url("./fonts/Montserrat-Regular.woff2") format("woff2");
+  src: url("../fonts/Montserrat-Regular.woff2") format("woff2");
   font-display: swap;
 }
 
@@ -11,7 +11,7 @@
   font-family: "Tumbly";
   font-weight: 600;
   /*src: url("../../assets/fonts/TumblyA2.otf");*/
-  src: url("./fonts/TumblyA2.otf");
+  src: url("../fonts/TumblyA2.otf");
   font-display: swap;
 }
 
