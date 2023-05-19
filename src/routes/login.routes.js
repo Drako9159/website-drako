@@ -1,7 +1,13 @@
 import { Router } from "express";
-import { loginController } from "../controllers/login.controller.js";
+import {
+  loginController,
+  criptController,
+} from "../controllers/login.controller.js";
+
 const router = Router();
 
-router.post("/login", loginController);
+router.post("/auth", loginController);
+
+router.post("/cript", criptController);
 
 export default router;

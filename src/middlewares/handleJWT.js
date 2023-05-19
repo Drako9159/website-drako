@@ -7,6 +7,7 @@ const PASSWORD_KEY = process.env.PASSWORD_KEY;
 async function tokenSign(user, pass) {
   const checkPass = await decryptHash(pass, PASSWORD_KEY);
   const checkUser = await decryptHash(user, USER_KEY);
+  console.log(checkPass, checkUser);
   if (!checkPass || !checkUser) return false;
   return getToken(user, pass);
 }

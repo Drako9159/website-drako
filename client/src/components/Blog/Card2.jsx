@@ -6,7 +6,7 @@ import themeLibrary from "../../themes/themeLibrary";
 import NotRequest from "../../pages/Extra/NotRequest";
 import { useConfigsStore } from "../../store/configs";
 
-export default function Card2({ posts, status, isLoading }) {
+export default function Card2({ posts, status, isLoading, imagesUrl }) {
   //const theme = useThemeStore((state) => state.theme);
   const theme = useConfigsStore((state) => state.configs.theme);
   const color = themeLibrary(theme);
@@ -30,7 +30,7 @@ export default function Card2({ posts, status, isLoading }) {
               <div className={styles.head}>
                 <img
                   src={
-                    import.meta.env.VITE_URL_BACKEND + "images/webp/" + e.image
+                    imagesUrl + "webp/" + e.image
                   }
                   alt={e.title}
                   className={styles.pick}

@@ -23,6 +23,7 @@ app.use(
       process.env.DOMINIO,
       process.env.VERCEL_URL,
       "http://localhost:5000",
+      "http://localhost:4000",
       "http://" + process.env.IP + ":5000",
     ],
     exposedHeaders: ["authorization"],
@@ -51,7 +52,7 @@ let setCache = function (req, res, next) {
   next();
 };
 
-app.use(setCache);
+//app.use(setCache);
 
 // routes
 app.use("/api", postsRoute);

@@ -29,16 +29,16 @@ export default function Post() {
             setPost(response.data),
               setStatus(response.status),
               setPostHead({
-                description: response.data.content.info.description,
-                title: response.data.content.info.title,
+                description: response.data.content.post.description,
+                title: response.data.content.post.title,
                 link:
                   import.meta.env.VITE_URL_DOMAIN +
                   "blog/" +
-                  response.data.content.info.filename,
+                  response.data.content.post.filename,
                 image:
                   import.meta.env.VITE_URL_BACKEND +
                   "images/webp/" +
-                  response.data.content.info.image,
+                  response.data.content.post.image,
               }),
               setIsLoading(false);
           });

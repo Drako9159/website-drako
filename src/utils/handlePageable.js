@@ -31,6 +31,10 @@ export function pageable(data, page, size, sort) {
     numberOfElements: data.length,
     first: true,
     empty: false,
+    image: {
+      url: process.env.BACKEND_URL + "images/",
+      options: ["webp/", "gif/"]
+    },
   };
 
   return { content, pageables };

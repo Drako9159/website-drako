@@ -14,6 +14,7 @@ export default function Blog() {
   useSEO(useLanguage().head.blog);
   const language = useLanguageStore((state) => state.language);
   const [posts, setPosts] = useState([]);
+  const [imagesUrl, setImagesUrl] = useState(""); // [0] = [url, setUrl
   const [status, setStatus] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,14 +26,18 @@ export default function Blog() {
         if (language === "es" && isAuth) {
           await getPostsEs().then((response) => {
             setPosts(response.data.content),
+            setImagesUrl(response.data.image.url),
               setStatus(response.status),
               setIsLoading(false);
+              
           });
         } else if (language === "en" && isAuth) {
           await getPostsEn().then((response) => {
             setPosts(response.data.content),
+            setImagesUrl(response.data.image.url),
               setStatus(response.status),
               setIsLoading(false);
+              
           });
         }
       } catch (error) {
@@ -53,7 +58,7 @@ export default function Blog() {
     <>
       <Header activeLink={"blog"}></Header>
       <Card1></Card1>
-      <Card2 posts={posts} status={status} isLoading={isLoading}></Card2>
+      <Card2 posts={posts} status={status} isLoading={isLoading} imagesUrl={imagesUrl}></Card2>
       <Footer></Footer>
     </>
   );

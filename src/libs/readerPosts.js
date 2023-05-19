@@ -64,13 +64,13 @@ async function readById(id) {
     path.join(`public/posts/md_files`, filename),
     "utf-8"
   );
-  const info = readHeader(text);
+  const post = readHeader(text);
 
   try {
     const dataHTML = md.render(
       content.toString().replace(/-{3}([à-ü\w\s:"',{}/.-])*-{3}/gm, "")
     );
-    return { dataHTML, info };
+    return { post, dataHTML };
   } catch (err) {
     console.log(err);
     return "NOT_POST";
@@ -92,12 +92,12 @@ async function readByFilepath(filepath) {
     path.join(`public/posts/md_files`, filename),
     "utf-8"
   );
-  const info = readHeader(text);
+  const post = readHeader(text);
   try {
     const dataHTML = md.render(
       content.toString().replace(/-{3}([à-ü\w\s:"',{}/.-])*-{3}/gm, "")
     );
-    return { dataHTML, info };
+    return { post, dataHTML };
   } catch (err) {
     console.log(err);
     return "NOT_POST";

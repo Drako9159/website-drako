@@ -1,5 +1,6 @@
 import handleError from "../utils/handleError.js";
 import { tokenSign } from "../middlewares/handleJWT.js";
+import { getHash, getSalt } from "../utils/handleHash.js";
 
 async function loginController(req, res) {
   try {
@@ -27,4 +28,21 @@ async function loginController(req, res) {
   }
 }
 
-export { loginController };
+async function criptController(req, res) {
+  try {
+    const { password } = req.body;
+    if (!password) {
+      handleError(res, "NOT_PAYLOAD_DATA", 403);
+      return;
+    }
+
+    const salt = await getSalt(10);
+    const hash = await getHash(password, salt);
+    res.send({ hash: hash });
+  } catch (error) {
+    handleError(res, "ERROR_GENERATIN_CRIPT", 403);
+  }
+}
+
+
+export { loginController, criptController };

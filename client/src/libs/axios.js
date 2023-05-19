@@ -2,7 +2,8 @@ import axios from "axios";
 import { useAuthStore } from "../store/auth";
 
 const authApi = axios.create({
-  baseURL: import.meta.env.VITE_URL_BACKEND,
+ baseURL: import.meta.env.VITE_URL_BACKEND,
+  //baseURL: import.meta.env.VITE_URL_DEV,
   credentials: "include",
   withCredentials: true,
 });
