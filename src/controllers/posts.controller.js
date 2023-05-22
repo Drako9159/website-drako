@@ -6,6 +6,7 @@ import {
 } from "../utils/handleSorter.js";
 import { pageable } from "../utils/handlePageable.js";
 import handleError from "../utils/handleError.js";
+import { authGDrive } from "../libs/handleGDrive.js";
 
 export async function getPosts(req, res) {
   const { sort, language, page, size } = req.query;
@@ -25,4 +26,13 @@ export async function getContentPost(req, res) {
   if (!content) return handleError(res, "POST_NOT_EXIST", 400);
   //res.header("Content-Type", "text/html; charset=utf-8").send(content);
   res.send({ content });
+}
+
+export async function checkPosts(req, res) {
+  try {
+    await authGDrive(res);
+    res.send({ message: "ALL_SYNC" });
+  } catch (err) {
+    return handleError(res, "ERROR_SYNC_POSTS", 500);
+  }
 }

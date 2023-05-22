@@ -1,6 +1,7 @@
 /node_modules
 .env
 /client/node_modules
+credentials.json
 
 # fly configuration
 *fly.toml

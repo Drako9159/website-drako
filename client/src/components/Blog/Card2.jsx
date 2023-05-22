@@ -11,6 +11,7 @@ export default function Card2({ posts, status, isLoading, imagesUrl }) {
   const theme = useConfigsStore((state) => state.configs.theme);
   const color = themeLibrary(theme);
 
+  
   if (isLoading) return <ChargeAnimation></ChargeAnimation>;
 
   if (status === 0) {

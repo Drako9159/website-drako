@@ -4,12 +4,14 @@ import MarkdownIt from "markdown-it";
 import jsx from "markdown-it-jsx";
 const md = new MarkdownIt().use(jsx);
 
+const dir = `public/${process.env.FOLDER}/md_files`;
+
 export async function readerArticles() {
-  const md_files = await readdir(path.join(`public/posts/md_files`));
+  const md_files = await readdir(path.join(dir));
   const data = [];
   for await (const file of md_files) {
     const text = await readFile(
-      path.join(`public/posts/md_files`, file),
+      path.join(dir, file),
       "utf-8"
     );
     const header = readHeader(text);
@@ -51,7 +53,7 @@ export async function readerContentPost(id) {
 }
 
 async function readById(id) {
-  const md_files = await readdir(path.join(`public/posts/md_files`));
+  const md_files = await readdir(path.join(dir));
   let filename = "";
 
   md_files.forEach((e) => {
@@ -59,10 +61,10 @@ async function readById(id) {
   });
   if (filename === "") return false;
   const content = await readFile(
-    path.join(`public/posts/md_files/` + filename)
+    path.join(`${dir}/` + filename)
   );
   const text = await readFile(
-    path.join(`public/posts/md_files`, filename),
+    path.join(dir, filename),
     "utf-8"
   );
   const post = readHeader(text);
@@ -79,7 +81,7 @@ async function readById(id) {
 }
 
 async function readByFilepath(filepath) {
-  const md_files = await readdir(path.join(`public/posts/md_files`));
+  const md_files = await readdir(path.join(dir));
   let filename = "";
 
   md_files.forEach((e) => {
@@ -87,10 +89,10 @@ async function readByFilepath(filepath) {
   });
   if (filename === "") return false;
   const content = await readFile(
-    path.join(`public/posts/md_files/` + filename)
+    path.join(`${dir}/` + filename)
   );
   const text = await readFile(
-    path.join(`public/posts/md_files`, filename),
+    path.join(dir, filename),
     "utf-8"
   );
   const post = readHeader(text);

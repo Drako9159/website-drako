@@ -14,13 +14,14 @@ export default function Card1({ post, status, isLoading, colorPost }) {
   if (status >= 400) {
     return <NotRequest status={status} />;
   }
+  
 
   // ${handleThemePost(colorPost).container}
   return (
     <div
       className={`${styles.container} ${
         theme === "night" ? styles.containerNight : styles.containerDay
-      } `}
+      } ${handleThemePost(colorPost).container}`}
       dangerouslySetInnerHTML={{ __html: post.content.dataHTML }}
     ></div>
   );

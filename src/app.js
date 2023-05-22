@@ -35,7 +35,7 @@ app.use(
 app.use(
   "/api/images",
   //authMiddleware,
-  express.static(path.join(process.cwd(), "./public/posts/images"))
+  express.static(path.join(process.cwd(), `./public/${process.env.FOLDER}/images`))
 );
 
 app.use(express.static(path.join(process.cwd(), "./client/dist")));
@@ -65,7 +65,8 @@ app.use((req, res, next) => {
     .status(404)
     .header("Content-Type", "application/json; charset=utf-8")
     .send({ message: "404 Not Found" });
-});*/
+});
+*/
 
 app.use("*", (req, res, next) => {
   const indexFile = path.resolve(process.cwd() + "/client/dist/", "index.html");

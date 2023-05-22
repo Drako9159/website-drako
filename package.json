@@ -13,9 +13,11 @@
   "author": "@drako9159",
   "license": "MIT",
   "devDependencies": {
+    "@google-cloud/local-auth": "2.1.0",
     "bcrypt": "5.1.0",
     "cors": "2.8.5",
     "dotenv": "16.0.3",
+    "googleapis": "105.0.0",
     "jsonwebtoken": "9.0.0",
     "markdown-it": "13.0.1",
     "markdown-it-jsx": "1.1.0",
