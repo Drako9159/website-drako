@@ -9,3 +9,7 @@ export async function getPostsEn() {
 export async function getPost(id) {
   return await axios.get(`/posts/${id}`);
 }
+
+export async function syncDrive() {
+  return await axios.get("/sync_drive");
+}

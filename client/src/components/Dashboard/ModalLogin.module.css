@@ -1,0 +1,26 @@
+.container{
+    font-family: "Montse";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #646464;
+    border-radius: 10px;
+    width: 60%;
+    height: 50%;
+    padding: 20px;
+    margin: 50px;
+    box-shadow: 0 0 2px 0 #c2c2c2;
+}
+.form{
+   
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.form button{
+    cursor: pointer;
+}
+.form input{
+    outline: none;
+}

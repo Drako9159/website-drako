@@ -14,6 +14,7 @@ import { handleLocalStorage } from "./utils/handleLocalStorage";
 import useConfigs from "./hooks/useConfigs";
 import useAuth from "./hooks/useAuth";
 import { useConfigsStore } from "./store/configs";
+import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   const setTheme = useThemeStore((state) => state.setTheme);
@@ -22,11 +23,10 @@ export default function App() {
   //handleLocalStorage(localStorage, setTheme, setLanguageMode);
 
   useConfigs();
- 
 
   //const setConfigTheme = useConfigsStore((state) => state.setTheme);
   //setConfigTheme({ theme: "daysss" });
-  //const setThemeConfig 
+  //const setThemeConfig
   //useConfigsStore.getState().setTheme({ theme: "day" })
   //console.log(useConfigsStore.getState().configs);
 
@@ -42,6 +42,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<Post />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound></NotFound>} />
           </Routes>
         </BrowserRouter>
