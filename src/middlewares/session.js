@@ -12,7 +12,7 @@ export default async function authMiddleware(req, res, next) {
 
     const dataToken = verifyToken(token);
     if (!dataToken) {
-      handleError(res, "TOKEN_EXPIRED", 403);
+      handleError(res, "TOKEN_EXPIRED", 401);
       return;
     }
     const query = {

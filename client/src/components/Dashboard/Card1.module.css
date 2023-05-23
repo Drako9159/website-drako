@@ -7,9 +7,17 @@
   
   font-family: "Montse";
   border-radius: 5px;
+  color: #ffffff;
 }
 button{
   cursor: pointer;
+  background-color: rgb(129, 129, 129);
+  border: none;
+  border-radius: 5px;
+}
+button:hover{
+  background-color: rgb(110, 110, 110);
+  transition: background-color .2s ease;
 }
 
 .left {
